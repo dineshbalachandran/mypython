@@ -59,7 +59,7 @@ def morse(word):
             if e[i] not in lkp.values():   
                 break
             i += 1
-            
+             
         if (i == len(e)):          
             vl.append(e)    
        

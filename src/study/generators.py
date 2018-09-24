@@ -30,11 +30,11 @@ def mno():
         yield j
 
 if __name__ == '__main__':
-    # k = abc()
+    k = abc()
     
-    k = mno()
+    #k = mno()
     
     for i in k: 
         print (i)
-        if i < 6:
-            l.append(i+3)
+        # if i < 6:
+        #    l.append(i+3)
