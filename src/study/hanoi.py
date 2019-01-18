@@ -6,8 +6,8 @@ Created on 24 Sep. 2018
 
 import sys
 
-def hanoi(left):
-    _move(left,[],[],'1','2','3',0)
+def hanoi(stack):
+    _move1(stack,'1','2','3')
 
 def _move(left, mid, right, lname, mname, rname, count):
     
@@ -37,7 +37,38 @@ def _move(left, mid, right, lname, mname, rname, count):
        
     _move(right, left, mid, rname, lname, mname, count+1)
 
+
+def _move1(stack, lname, mname, rname):
+    
+    moves = 0
+    disks = len(stack)
+    left = stack
+    mid = []
+    right = []    
+    
+    while (len(right) != disks):    
+        
+        l = left[-1] if len(left) != 0 else disks+1 #a value higher than other disks to facilitate check below
+        m = mid[-1] if len(mid) != 0 else disks+1        
+            
+        if (l < m):            
+            mid.append(left.pop())
+            print(lname, "->", mname, ": ", l, sep="")
+        else:            
+            left.append(mid.pop())
+            print(mname, "->", lname, ": ", m, sep="")  
+        
+        moves = moves + 1
+        
+        (t, tname) = (left, lname)
+        (left, lname) = (right, rname)
+        (right, rname) = (mid, mname)
+        (mid, mname) = (t, tname)       
+        
+    print("Number of moves:", moves)
+    return
+
 if __name__ == '__main__':
     
-    stack = [6,5,4,3,2,1]    
+    stack = [4,3,2,1]    
     hanoi(stack)
