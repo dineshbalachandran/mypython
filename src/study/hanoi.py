@@ -70,5 +70,5 @@ def _move1(stack, lname, mname, rname):
 
 if __name__ == '__main__':
     
-    stack = [4,3,2,1]    
+    stack = [6,5,4,3,2,1]    
     hanoi(stack)

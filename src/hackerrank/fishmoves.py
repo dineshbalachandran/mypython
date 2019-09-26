@@ -4,6 +4,8 @@ Created on 27 Nov. 2017
 @author: DINESHKB
 '''
 
+import sys
+
 def fishmoves(text):    
     data = text.split('#')
     fish = int(data[0])
@@ -29,5 +31,16 @@ def fishmoves(text):
         
     return t
 
+def leastmoves(t):
+    min = sys.maxsize 
+    for e in t:
+        s = sum(e)
+        if s < min:
+            min = s
+    
+    return min
+
 if __name__ == '__main__':
-    print(fishmoves("10#9,20,25,100"))
+    t = fishmoves("20#25,20,9,100")
+    print(t)
+    print(leastmoves(t))

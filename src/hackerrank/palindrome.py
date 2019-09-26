@@ -16,4 +16,4 @@ def nextpal(num):
     return (np_left + np_right)
     
 if __name__ == '__main__':
-    print(nextpal("12321"))
+    print(nextpal("12344321"))
