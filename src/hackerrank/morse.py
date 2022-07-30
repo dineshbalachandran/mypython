@@ -66,4 +66,4 @@ def morse(word):
     return set(vl)
 
 if __name__ == '__main__':
-    print(len(morse("infy")))
+    print(morse("infy"))
